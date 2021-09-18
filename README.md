@@ -15,7 +15,7 @@ License -> https://github.com/FayasNoushad/Play-Store-Bot/blob/main/LICENSE
 
 ## Deploy
 
-```
+```sh
 git clone https://github.com/FayasNoushad/Play-Store-Bot/tree/main
 cd Play-Store-Bot
 pip3 install -r requirements.txt
