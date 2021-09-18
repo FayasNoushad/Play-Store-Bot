@@ -4,6 +4,7 @@
 # All rights reserved by FayasNoushad
 # License -> https://github.com/FayasNoushad/Play-Store-Bot/blob/main/LICENSE
 
+import play_scraper
 from pyrogram import Client, filters
 from pyrogram.types import *
 
@@ -31,6 +32,39 @@ async def filter_all(bot, update):
         disable_web_page_preview=True,
         quote=True
     )
+
+
+@Bot.on_inline_query()
+async def search(bot, update):
+    results = play_scraper.search(update.query)
+    answers = []
+    for result in results:
+        details = f"**Title:** `{result["title"]}`" \
+        f"**Description:** `{result["description"]}`" + "\n" \
+        f"**App ID:** `{result["app_id"]}`" + "\n" \
+        f"**Developer:** `{result["developer"]}`" + "\n" \
+        f"**Developer ID:** `{result["developer_id"]}`" + "\n" \
+        f"**Score:** `{result["score"]}`" + "\n" \
+        f"**Price:** `{result["price"]}`" + "\n" \
+        f"**Full Price:** `{result["full_price"]}`" + "\n" \
+        f"**Free:** `{result["free"]}`" + "\n" \
+        "\n" + "Made by @FayasNoushad"
+        reply_markup = InlineKeyboardMarkup(
+            [[InlineKeyboardButton(text="Play Store", url="https://play.google.com"+result["url"])]]
+        )
+        try:
+            answers.append(
+                InlineQueryResultPhoto(
+                    title=result["title"],
+                    description=result["description"],
+                    caption=details,
+                    photo_url=result["icon"],
+                    reply_markup=reply_markup
+                )
+            )
+        except:
+            pass
+    await update.answer(answers)
 
 
 Bot.run()
