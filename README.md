@@ -25,7 +25,7 @@ python3 main.py
 
 ---
 
-## Variable
+## Variables
 
 - `API_HASH` Your API Hash from my.telegram.org
 - `API_ID` Your API ID from my.telegram.org
