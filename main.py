@@ -5,6 +5,7 @@
 # License -> https://github.com/FayasNoushad/Play-Store-Bot/blob/main/LICENSE
 
 from pyrogram import Client, filters
+from pyrogram.types import *
 
 
 Bot = Client(
