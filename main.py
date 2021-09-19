@@ -50,7 +50,14 @@ async def search(bot, update):
         f"**Free:** `{result["free"]}`" + "\n" \
         "\n" + "Made by @FayasNoushad"
         reply_markup = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Play Store", url="https://play.google.com"+result["url"])]]
+            [
+                [
+                    InlineKeyboardButton(
+                        text="Play Store",
+                        url="https://play.google.com"+result["url"]
+                    )
+                ]
+            ]
         )
         try:
             answers.append(
