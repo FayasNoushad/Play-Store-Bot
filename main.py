@@ -4,6 +4,7 @@
 # All rights reserved by FayasNoushad
 # License -> https://github.com/FayasNoushad/Play-Store-Bot/blob/main/LICENSE
 
+import os
 import play_scraper
 from pyrogram import Client, filters
 from pyrogram.types import *
