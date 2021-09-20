@@ -64,8 +64,8 @@ async def search(bot, update):
             answers.append(
                 InlineQueryResultArticle(
                     title=result["title"],
-                    description=result["description"],
-                    thumb_url=result["icon"],
+                    description=result.get("description", None),
+                    thumb_url=result.get("icon", None),
                     input_message_content=InputMessageContent(
                         InputTextMessageContent(
                             message_text=details,
@@ -75,8 +75,8 @@ async def search(bot, update):
                     reply_markup=reply_markup
                 )
             )
-        except:
-            pass
+        except Exception as error:
+            print(error)
     await update.answer(answers)
 
 
