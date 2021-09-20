@@ -40,15 +40,15 @@ async def search(bot, update):
     results = play_scraper.search(update.query)
     answers = []
     for result in results:
-        details = f"**Title:** `{result["title"]}`" \
-        f"**Description:** `{result["description"]}`" + "\n" \
-        f"**App ID:** `{result["app_id"]}`" + "\n" \
-        f"**Developer:** `{result["developer"]}`" + "\n" \
-        f"**Developer ID:** `{result["developer_id"]}`" + "\n" \
-        f"**Score:** `{result["score"]}`" + "\n" \
-        f"**Price:** `{result["price"]}`" + "\n" \
-        f"**Full Price:** `{result["full_price"]}`" + "\n" \
-        f"**Free:** `{result["free"]}`" + "\n" \
+        details = "**Title:** `{}`".format(result["title"]) \
+        "**Description:** `{}`".format(result["description"]) + "\n" \
+        "**App ID:** `{}`".format(result["app_id"]) + "\n" \
+        "**Developer:** `{}`".format(result["developer"]) + "\n" \
+        "**Developer ID:** `{}`".format(result["developer_id"]) + "\n" \
+        "**Score:** `{}`".format(result["score"]) + "\n" \
+        "**Price:** `{}`".format(result["price"]) + "\n" \
+        "**Full Price:** `{}`".format(result["full_price"]) + "\n" \
+        "**Free:** `{}`".format(result["free"]) + "\n" \
         "\n" + "Made by @FayasNoushad"
         reply_markup = InlineKeyboardMarkup(
             [
