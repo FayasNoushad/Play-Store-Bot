@@ -62,11 +62,14 @@ async def search(bot, update):
         )
         try:
             answers.append(
-                InlineQueryResultPhoto(
+                InlineQueryResultArticle(
                     title=result["title"],
                     description=result["description"],
-                    caption=details,
-                    photo_url=result["icon"],
+                    thumb_url=result["icon"],
+                    input_message_content=InputMessageContent(
+                        message_text=details,
+                        disable_web_page_preview=True
+                    ),
                     reply_markup=reply_markup
                 )
             )
