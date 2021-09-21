@@ -12,6 +12,18 @@ License -> https://github.com/FayasNoushad/Play-Store-Bot/blob/main/LICENSE
 ```
 
 ---
+# Deploy To Heroku
+
+<details><summary>Deploy To Heroku</summary>
+<p>
+<br>
+<a href="https://heroku.com/deploy?template=https://github.com/FayasNoushad/Play-Store-Bot/tree/main">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+</p>
+</details>
+
+---
 
 ## Deploy
 
